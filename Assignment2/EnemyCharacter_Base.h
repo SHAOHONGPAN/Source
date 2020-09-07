@@ -14,6 +14,9 @@
 #include "Components/StaticMeshComponent.h"
 #include "EnemyCharacter_Base.generated.h"
 
+using namespace std;
+using namespace chrono;
+
 UCLASS()
 class ASSIGNMENT2_API AEnemyCharacter_Base : public ACharacter
 {

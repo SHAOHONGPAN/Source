@@ -44,10 +44,10 @@ void ABullet::Tick(float DeltaTime)
 	{
 
 		// If the object hit was a pawn
-		if (Hit.GetActor()->IsA(ABaseAgent::StaticClass()))
+		if (Hit.GetActor()->IsA(AEnemyCharacter_Base::StaticClass()))
 		{
 
-			ABaseAgent* Pawn = Cast<ABaseAgent>(Hit.GetActor());
+			AEnemyCharacter_Base* Pawn = Cast<AEnemyCharacter_Base>(Hit.GetActor());
 
 			Pawn->InflictDamage(1);
 			if (Pawn->GetHealth() <= 0)

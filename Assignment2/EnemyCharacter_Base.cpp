@@ -110,7 +110,7 @@ void AEnemyCharacter_Base::ShootTarget(APawn* Target)
 	ShootProjectile();
 }
 
-// Shoots projectile at target
+// Rotates to face target pawn
 void AEnemyCharacter_Base::FaceTarget(APawn* Target)
 {
 	if (Target != NULL)
@@ -119,7 +119,13 @@ void AEnemyCharacter_Base::FaceTarget(APawn* Target)
 			GetActorLocation(), 
 			Target->GetActorLocation()
 		);
-		FRotator FaceTargetYaw = FRotator(GetActorRotation().Pitch, FaceTargetRotation.Yaw, GetActorRotation().Roll);
+
+		FRotator FaceTargetYaw = FRotator(
+			GetActorRotation().Pitch,
+			FaceTargetRotation.Yaw,
+			GetActorRotation().Roll
+		);
+
 		SetActorRotation(FaceTargetYaw);
 	}
 }
@@ -148,7 +154,7 @@ void AEnemyCharacter_Base::PostInitializeComponents()
 	PawnSensor->OnSeePawn.AddDynamic(this, &AEnemyCharacter_Base::OnSeePawn);
 }
 
-// Moves to target's locatio
+// Moves to target's location
 void AEnemyCharacter_Base::MoveToTarget(APawn* Target)
 {
 	if (Target != NULL)

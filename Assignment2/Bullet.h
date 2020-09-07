@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "BaseAgent.h"
+#include "EnemyCharacter_Base.h"
 #include "Bullet.generated.h"
 
 UCLASS()
