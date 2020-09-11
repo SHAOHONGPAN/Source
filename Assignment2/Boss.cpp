@@ -1,4 +1,4 @@
-//// Fill out your copyright notice in the Description page of Project Settings.
+// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "Boss.h"
@@ -53,14 +53,14 @@ void ABoss::BeginPlay()
 	//GetAllActorsOfClass1(GetWorld(),UClass::StaticClass(), TargetPonit);
 	AIController->MoveToLocation(UGameplayStatics::GetPlayerController(GetWorld(), 0)->GetPawn()->GetActorLocation());
 	GEngine->AddOnScreenDebugMessage(0, 10, FColor::Red, "Begineplaye");
-
+	RemainingHealth = HealthCom->EnemyTotalHealth;
 }
 
 // Called every frame
 void ABoss::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	if (RemainingHealth <= 50)
+	if (RemainingHealth >= 50)
 	{
 		UAIBlueprintHelperLibrary::CreateMoveToProxyObject(GetWorld(), this, UGameplayStatics::GetPlayerController(GetWorld(), 0)->GetPawn()->GetActorLocation());
 	}

@@ -34,4 +34,3 @@ public:
 	FVector NestLocation;
 	float RemainingHealth;
 };
-
